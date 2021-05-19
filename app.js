@@ -26,7 +26,7 @@ const state = {
         let result = await response.json();
         return result;
     },
-    morePokemons: async function(num){
+    getMorePokemons: async function(num){
         const response = await fetch(state.urlPokemon + num);
         let result = await response.json();
         return result;
@@ -41,12 +41,12 @@ selectPokemon.addEventListener("change", (event)=>{
     state.getDataPokemons(state.urlData+event.target.value).then(pokemon => {
         state.renderPokemons(pokemon);
         //Remove the bootstrapt class, which allows no image if it does not exist
-        const deleteBootstrapClass = (() => image.classList.remove('d-none'))();
+        image.classList.remove('d-none');
         selectPokemon.disabled = false;
     }).catch(console.log);
 });
 
 selectNumber.addEventListener("change", (event)=>{
     state.resultados = event.target.value;
-    state.morePokemons(state.resultados).then((item)=>state.addPokemonsToSelect(item)).catch(console.log);
+    state.getMorePokemons(state.resultados).then((item)=>state.addPokemonsToSelect(item)).catch(console.log);
 });
