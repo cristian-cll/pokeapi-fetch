@@ -21,15 +21,28 @@
     </div>
     <div class="container">
         <div class="input-group mb-3">
+            <span class="input-group-text">How many pokemons do you want to display?</span>
+            <select id="select-number" class="form-select" aria-label="selected pokemon" aria-describedby="selected-pokemon-label">
+                <option disabled selected>Default</option>
+                <option>5</option>
+                <option>10</option>
+                <option>20</option>
+                <option>50</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="input-group mb-3">
             <span class="input-group-text" id="selected-pokemon-label">Which pokemon do you want to display?</span>
             <select id="select-pokemon" class="form-select" aria-label="selected pokemon" aria-describedby="selected-pokemon-label">
-                <option selected>Select one pokemon</option>
+                <option disabled selected>Select one pokemon</option>
                 <option value="pikachu">Pikachu</option>
                 <option value="charmander">Charmander</option>
                 <option value="luxio">Luxio</option>
             </select>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
